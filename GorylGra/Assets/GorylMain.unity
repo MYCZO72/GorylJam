@@ -112,6 +112,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &86537709
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114924716529586598, guid: 547e46defc186ff41b2ca985e15cba47,
+        type: 2}
+      propertyPath: floors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404824543486260, guid: 547e46defc186ff41b2ca985e15cba47, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.9624507
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404824543486260, guid: 547e46defc186ff41b2ca985e15cba47, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.0920634
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404824543486260, guid: 547e46defc186ff41b2ca985e15cba47, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.14257812
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404824543486260, guid: 547e46defc186ff41b2ca985e15cba47, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404824543486260, guid: 547e46defc186ff41b2ca985e15cba47, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404824543486260, guid: 547e46defc186ff41b2ca985e15cba47, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404824543486260, guid: 547e46defc186ff41b2ca985e15cba47, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404824543486260, guid: 547e46defc186ff41b2ca985e15cba47, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924716529586598, guid: 547e46defc186ff41b2ca985e15cba47,
+        type: 2}
+      propertyPath: floors.Array.data[0]
+      value: 
+      objectReference: {fileID: 1625070858737748, guid: d3018f7056e514f4aafedc381965029e,
+        type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 547e46defc186ff41b2ca985e15cba47, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &362737803
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,12 +267,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 362737803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b9d48950e5f0b64b85eaf36ff8da1fc, type: 3}
+  m_Script: {fileID: 11500000, guid: e04ace8ca6346f34c82b717d2e8f797e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 5
-  floors:
-  - {fileID: 1625070858737748, guid: d3018f7056e514f4aafedc381965029e, type: 2}
+  BuildingCount: 5
 --- !u!1001 &410919069
 Prefab:
   m_ObjectHideFlags: 0

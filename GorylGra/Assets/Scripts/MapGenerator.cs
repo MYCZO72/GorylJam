@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	public int BuildingCount;
+
+	void Generate()
+	{
+		for(int i = 0; i < BuildingCount; i++)
+		{
+			
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void Start()
+	{
+		Generate();
 	}
 }
