@@ -1,0 +1,231 @@
+fileFormatVersion: 2
+guid: a158fe8600e01844abcb876f58d11209
+timeCreated: 1434572427
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Blob64_0
+    21300002: Blob64_1
+    21300004: Blob64_2
+    21300006: Blob64_3
+    21300008: Blob64_4
+    21300010: Blob64_5
+    21300012: Blob64_6
+    21300014: Blob64_7
+    21300016: Blob64_8
+    21300018: Blob64_9
+    21300020: Blob64_10
+    21300022: Blob64_11
+    21300024: Blob64_12
+    21300026: Blob64_13
+    21300028: Blob64_14
+    21300030: Blob64_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: 13
+  maxTextureSize: 256
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+  alphaIsTransparency: 1
+  textureType: 5
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Blob64_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 238
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob64_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 238
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob64_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 238
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob64_3
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 238
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob64_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 220
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob64_5
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 220
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob64_6
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 220
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob64_7
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 220
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob64_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 202
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob64_9
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 202
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob64_10
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 202
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob64_11
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 202
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob64_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 184
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob64_13
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 184
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob64_14
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 184
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob64_15
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 184
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: Something
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

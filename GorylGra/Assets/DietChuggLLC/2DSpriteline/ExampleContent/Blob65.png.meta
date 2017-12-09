@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: 65ae759e64a1e7740a4413c4a6cc8396
+timeCreated: 1434647372
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Blob64_0
+    21300002: Blob64_1
+    21300004: Blob64_2
+    21300006: Blob64_3
+    21300008: Blob64_4
+    21300010: Blob64_5
+    21300012: Blob64_6
+    21300014: Blob64_7
+    21300016: Blob64_8
+    21300018: Blob64_9
+    21300020: Blob64_10
+    21300022: Blob64_11
+    21300024: Blob64_12
+    21300026: Blob64_13
+    21300028: Blob64_14
+    21300030: Blob64_15
+    21300032: Blob65_0
+    21300034: Blob65_1
+    21300036: Blob65_2
+    21300038: Blob65_3
+    21300040: Blob65_4
+    21300042: Blob65_5
+    21300044: Blob65_6
+    21300046: Blob65_7
+    21300048: Blob65_8
+    21300050: Blob65_9
+    21300052: Blob65_10
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: 13
+  maxTextureSize: 256
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+  alphaIsTransparency: 1
+  textureType: 5
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Blob65_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 73
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob65_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 73
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob65_2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 73
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob65_3
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 73
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob65_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 55
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob65_5
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 57
+        width: 16
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob65_6
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 37
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob65_7
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 43
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob65_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 37
+        width: 33
+        height: 9
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob65_9
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 22
+        width: 25
+        height: 9
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blob65_10
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 23
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: Something
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
