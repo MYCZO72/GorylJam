@@ -7,7 +7,6 @@ public class Floor : MonoBehaviour {
 	Rigidbody2D rigidbody;
 	private Transform pozycja;
 
-
 	void Start()
 	{
 		rigidbody = GetComponent<Rigidbody2D>();

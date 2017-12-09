@@ -25,7 +25,7 @@ public class VerbsBank : MonoBehaviour {
         s[12] = 1222;
         s[13] = 1228;
         s[14] = 1232;
-        level = 10;
+        level = 1;
         newWord();
     }
 

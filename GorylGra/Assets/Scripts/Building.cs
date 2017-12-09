@@ -7,13 +7,14 @@ public class Building : MonoBehaviour
 {
 	public int height = 5;
 	public int KtoryBudynek;
+	public Building nextBuilding;
 
 	private Transform buildingHolder = null;
 	public GameObject[] floors;
 	public GameObject[] parter;
 	public GameObject[] sufity;
 
-	private List<GameObject> pietra = new List<GameObject>();
+	public List<GameObject> pietra = new List<GameObject>();
 
 	public void Create( int customheight, int style )
 	{
@@ -21,10 +22,10 @@ public class Building : MonoBehaviour
 		if( buildingHolder == null )
 			buildingHolder = new GameObject("Building").transform;
 
-		GameObject parterInstance = Instantiate( parter[ style ], new Vector3( this.transform.position.x, 3f, 0f ), Quaternion.identity, buildingHolder );
+		GameObject parterInstance = Instantiate( parter[ style ], new Vector3( this.transform.position.x, 0f, 0f ), Quaternion.identity, buildingHolder );
 		pietra.Add( parterInstance );
 
-		for(int i = 2; i < height; i++)
+		for(int i = 1; i < height - 1; i++)
 		{
 			GameObject nowy = floors[ style ];
 
@@ -35,7 +36,7 @@ public class Building : MonoBehaviour
 			pietra.Add( instance );
 		}
 
-		GameObject sufitInstance = Instantiate( sufity[ style ], new Vector3( this.transform.position.x, 3 * height, 0f ), Quaternion.identity, buildingHolder );
+		GameObject sufitInstance = Instantiate( sufity[ style ], new Vector3( this.transform.position.x, 3 * ( height - 1 ), 0f ), Quaternion.identity, buildingHolder );
 		pietra.Add( sufitInstance );
 	}
 

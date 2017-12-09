@@ -8,11 +8,13 @@ public class MapGenerator : MonoBehaviour {
 	public int BuildingCount;
 	public int styl;
 	public GameObject budynek;
-	public int space;
+	public int space = 10;
 	public int MinimalHeight;
 	public int MaximalHeight;
 
 	private Transform boardHolder = null;
+
+	public List<GameObject> BuildingList = new List<GameObject>();
 
 	void Generate()
 	{
@@ -28,6 +30,15 @@ public class MapGenerator : MonoBehaviour {
 			budskrypt.Create( Random.Range( MinimalHeight, MaximalHeight ), styl );
 
 			budskrypt.KtoryBudynek = i;
+
+			BuildingList.Add( nowybudynek );
+
+			if( i > 0 )
+			{
+				Building popbud = BuildingList[i - 1].GetComponent<Building>();
+
+				popbud.nextBuilding = budskrypt;
+			}
 		}
 	}
 
