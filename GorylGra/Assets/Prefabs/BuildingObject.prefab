@@ -55,5 +55,5 @@ MonoBehaviour:
   KtoryBudynek: 0
   floors:
   - {fileID: 1625070858737748, guid: d3018f7056e514f4aafedc381965029e, type: 2}
-  Partery:
+  parter:
   - {fileID: 1294010695180154, guid: 2de4cf9e7c1a6264ab3f006fd1de3e57, type: 2}
