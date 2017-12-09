@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 public class Building : MonoBehaviour
 {
 	public int height = 5;
+	public int KtoryBudynek;
 
 	private Transform buildingHolder = null;
 	public GameObject[] floors;
@@ -37,6 +38,11 @@ public class Building : MonoBehaviour
 
 		Destroy( top );
 		height --;
+	}
+
+	Transform GetTopTransform()
+	{
+		return pietra[ pietra.Count - 1].transform;
 	}
 
 	void Start()
