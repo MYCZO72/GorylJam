@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 362737805}
   - component: {fileID: 362737804}
   - component: {fileID: 362737808}
+  - component: {fileID: 362737809}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -205,87 +206,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoom: 64
---- !u!1001 &1188517266
-Prefab:
+--- !u!114 &362737809
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4989489948631244, guid: 1e05dc03045dd214194091c7a5b12f11, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989489948631244, guid: 1e05dc03045dd214194091c7a5b12f11, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989489948631244, guid: 1e05dc03045dd214194091c7a5b12f11, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.0896321
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989489948631244, guid: 1e05dc03045dd214194091c7a5b12f11, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989489948631244, guid: 1e05dc03045dd214194091c7a5b12f11, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989489948631244, guid: 1e05dc03045dd214194091c7a5b12f11, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989489948631244, guid: 1e05dc03045dd214194091c7a5b12f11, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989489948631244, guid: 1e05dc03045dd214194091c7a5b12f11, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 1e05dc03045dd214194091c7a5b12f11, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1683236884
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4500408908687458, guid: d3018f7056e514f4aafedc381965029e, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500408908687458, guid: d3018f7056e514f4aafedc381965029e, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500408908687458, guid: d3018f7056e514f4aafedc381965029e, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.0896321
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500408908687458, guid: d3018f7056e514f4aafedc381965029e, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500408908687458, guid: d3018f7056e514f4aafedc381965029e, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500408908687458, guid: d3018f7056e514f4aafedc381965029e, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500408908687458, guid: d3018f7056e514f4aafedc381965029e, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500408908687458, guid: d3018f7056e514f4aafedc381965029e, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d3018f7056e514f4aafedc381965029e, type: 2}
-  m_IsPrefabParent: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362737803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9d48950e5f0b64b85eaf36ff8da1fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: 5
+  floors:
+  - {fileID: 1625070858737748, guid: d3018f7056e514f4aafedc381965029e, type: 2}
