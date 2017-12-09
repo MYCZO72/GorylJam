@@ -53,4 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   height: 5
   KtoryBudynek: 0
-  floors: []
+  floors:
+  - {fileID: 1625070858737748, guid: d3018f7056e514f4aafedc381965029e, type: 2}

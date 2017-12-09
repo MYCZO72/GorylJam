@@ -13,7 +13,7 @@ public class Building : MonoBehaviour
 
 	private List<GameObject> pietra = new List<GameObject>();
 
-	void Create( int xchange, int customheight )
+	public void Create( int customheight )
 	{
 		height = customheight;
 		if( buildingHolder == null )
@@ -23,7 +23,7 @@ public class Building : MonoBehaviour
 		{
 			GameObject nowy = floors[ Random.Range( 0, floors.Length - 1 ) ];
 
-			GameObject instance = Instantiate( nowy, new Vector3( xchange, i * 3, 0f ), Quaternion.identity, buildingHolder );
+			GameObject instance = Instantiate( nowy, new Vector3( this.transform.position.x, i * 3, 0f ), Quaternion.identity, buildingHolder );
 
 			//instance.transform.SetParent( buildingHolder );
 
@@ -31,7 +31,7 @@ public class Building : MonoBehaviour
 		}
 	}
 
-	void DestroyTop()
+	public void DestroyTop()
 	{
 		GameObject top = pietra[ pietra.Count - 1 ];
 		pietra.RemoveAt( pietra.Count - 1 );
@@ -40,13 +40,13 @@ public class Building : MonoBehaviour
 		height --;
 	}
 
-	Transform GetTopTransform()
+	public Transform GetTopTransform()
 	{
-		return pietra[ pietra.Count - 1].transform;
+		return pietra[ pietra.Count - 1 ].transform;
 	}
 
 	void Start()
 	{
-		Create( 0, 6 );
+		//Create( 6 );
 	}
 }
