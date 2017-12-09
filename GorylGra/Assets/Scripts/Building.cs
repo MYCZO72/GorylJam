@@ -12,8 +12,9 @@ public class Building : MonoBehaviour
 
 	private List<GameObject> pietra = new List<GameObject>();
 
-	void Create()
+	void Create( int xchange, int customheight )
 	{
+		height = customheight;
 		if( buildingHolder == null )
 			buildingHolder = new GameObject("Building").transform;
 
@@ -21,7 +22,7 @@ public class Building : MonoBehaviour
 		{
 			GameObject nowy = floors[ Random.Range( 0, floors.Length - 1 ) ];
 
-			GameObject instance = Instantiate( nowy, new Vector3( 0f, i * 3, 0f ), Quaternion.identity, buildingHolder );
+			GameObject instance = Instantiate( nowy, new Vector3( xchange, i * 3, 0f ), Quaternion.identity, buildingHolder );
 
 			//instance.transform.SetParent( buildingHolder );
 
@@ -40,6 +41,6 @@ public class Building : MonoBehaviour
 
 	void Start()
 	{
-		Create();
+		Create( 0, 6 );
 	}
 }
