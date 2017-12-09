@@ -1,11 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 00e2c99d3ce039c40b3f3ff69866ab7a
-timeCreated: 1512858733
-=======
 guid: db19e73d6996f3143a2b77ed53915c2c
 timeCreated: 1512858879
->>>>>>> 632ec097b7c768b521f1b6c78d4b498bd6e70061
 licenseType: Free
 TrueTypeFontImporter:
   externalObjects: {}
@@ -18,15 +13,11 @@ TrueTypeFontImporter:
   fontName: Arial
   fontNames:
   - Arial
-<<<<<<< HEAD
-  fallbackFontReferences: []
-=======
   fallbackFontReferences:
   - {fileID: 12800000, guid: 29ab1f920e0557d458be85b92088af1c, type: 3}
   - {fileID: 12800000, guid: d5bb1046260c2fe4fb45c37783f81569, type: 3}
   - {fileID: 12800000, guid: 797091a638cc58e4bb7ed1d7f934b783, type: 3}
   - {fileID: 12800000, guid: 73f330ed6a335924a9cc7cdecba3aba3, type: 3}
->>>>>>> 632ec097b7c768b521f1b6c78d4b498bd6e70061
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
