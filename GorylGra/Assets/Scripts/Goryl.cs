@@ -39,8 +39,6 @@ public class Goryl : MonoBehaviour {
 	IEnumerator JumpProcedure( Vector3 destination )
 	{
         czySkacze = true;
-		//Debug.Log("skakanie destination " + destination.x);
-		//Debug.Log("skakanie pozycja " + this.transform.position.x);
 		while( this.transform.position.x < destination.x )
 		{
 			float xD = this.transform.position.x + plusfloat;
@@ -65,13 +63,11 @@ public class Goryl : MonoBehaviour {
 
 	void skonczonybudynek()
 	{
-		//Debug.Log( "teraz h nowe przed ifem: " + curH );
 		if( curH == 0 )
 		{
-			//Debug.Log( "przed zmiana: " + transform.position.x );
-			Vector3 teraz = new Vector3( transform.position.x + space, 0f, 0f ); //new Transform( new Vector3( this.transform.position.x, this.transform.position.y, this.transform.position.z ) );
+			Vector3 teraz = new Vector3( transform.position.x + space, 0f, 0f );
 
-			//Debug.Log( "po zmianie: " + transform.position.x );
+
             score++;  
             gameManager.verbsBank.level = score / 10 + 1;  //co 10 wzieksza sie poziom :)
             Building newBuilding = currentBuilding.nextBuilding;
@@ -79,7 +75,6 @@ public class Goryl : MonoBehaviour {
 			currentBuilding = newBuilding;
 			ktorybudynek ++;
 			curH = currentBuilding.height;
-			//Debug.Log( "teraz h nowe w ifie: " + curH );
 			Jump( teraz );
 		}
 	}
@@ -106,17 +101,14 @@ public class Goryl : MonoBehaviour {
 			gameManager.verbsBank.actualCharNumber = 0;
 			gameManager.verbsBank.newWord();
 			StartCoroutine(afterDestroyProcedure());
-			//rozpierdol
 			rozpierdol();
 		}
-		//Debug.Log("ActualChar " + actualchar);
 
 		if(!czySkacze)
         if (Input.GetKeyDown((KeyCode)actualchar))
 		{
 			textureRenderer.sprite = textureList[Random.Range(0, textureList.Count - 1)];
 			gameManager.verbsBank.actualCharNumber++;
-			//Debug.Log("Next");
 		}
 	}
 
@@ -129,41 +121,19 @@ public class Goryl : MonoBehaviour {
 		textureRenderer.sprite = textureList[0];
 		space = mapGenerator.space;
 
-		//Debug.Log("transforek");
 		this.transform.Translate( -space, 0f, 0f );
 
 
 		Building pierwszy = mapGenerator.BuildingList[0].GetComponent<Building>();
 		currentBuilding = pierwszy;
 		curH = pierwszy.height;
-		//Debug.Log( "budynek pierwszy wysokosc" + pierwszy.height );
-		//Debug.Log( "pierwsze h na poczatku: " + curH );
+
 		Jump( pierwszy.transform.position );
 	}
 
 
 	void Start () {
 		StartCoroutine( startowy() );
-		/*Debug.Log( "startujemy" );
-		gorylColider = GetComponent<Collider>();
-		gorylRigid = GetComponent<Rigidbody>();
-		textureRenderer = GetComponent<SpriteRenderer>();
-		textureRenderer.sprite = textureList[0];
-		space = mapGenerator.space;
-
-		Debug.Log("transforek");
-		this.transform.Translate( -space, 0f, 0f );
-
-
-
-		Debug.Log( "to jest rozmiar budynkowy: " + mapGenerator.BuildingList.Count);
-		Building pierwszy = mapGenerator.BuildingList[0].GetComponent<Building>();
-		currentBuilding = pierwszy;
-		curH = pierwszy.height;
-		Debug.Log( curH );
-		Debug.Log( "x " + pierwszy.transform.position.x );
-		Debug.Log( "y " + pierwszy.transform.position.y );
-		Jump( pierwszy.transform );*/
 	}
 
 	private bool pierwszyraz = true;
@@ -183,25 +153,6 @@ public class Goryl : MonoBehaviour {
 
     void Update () {
 		StartCoroutine( updatowanie() );
-		/*Vector3 rak = this.transform.position;
-		rak.z = rak.z - 1;
-		kamerka.transform.position = rak;
-
-        CheckInput();
-		skonczonybudynek();*/
-
-		/*if( curH == 0 )
-		{
-			Transform teraz = this.transform;
-			teraz.x += space;
-			newBuilding = currentBuilding.nextBuilding;
-			Destroy( currentBuilding );
-			currentBuilding = newBuilding;
-			ktorybudynek ++;
-			curH = currentBuilding.height;
-
-			Jump( teraz );
-		}*/
 
 		/*float movex = Input.GetAxis("Horizontal");
 		float movey = Input.GetAxis("Vertical");
