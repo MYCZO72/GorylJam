@@ -57,3 +57,5 @@ MonoBehaviour:
   - {fileID: 1625070858737748, guid: d3018f7056e514f4aafedc381965029e, type: 2}
   parter:
   - {fileID: 1294010695180154, guid: 2de4cf9e7c1a6264ab3f006fd1de3e57, type: 2}
+  sufity:
+  - {fileID: 1049424108545042, guid: 5d35605a085e8854d8d038030faa16b9, type: 2}

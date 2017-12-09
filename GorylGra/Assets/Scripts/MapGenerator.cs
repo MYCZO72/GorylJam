@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 public class MapGenerator : MonoBehaviour {
 
 	public int BuildingCount;
+	public int styl;
 	public GameObject budynek;
 	public int space;
 	public int MinimalHeight;
@@ -24,7 +25,7 @@ public class MapGenerator : MonoBehaviour {
 
 			Building budskrypt = nowybudynek.GetComponent<Building>();
 
-			budskrypt.Create( Random.Range( MinimalHeight, MaximalHeight ) );
+			budskrypt.Create( Random.Range( MinimalHeight, MaximalHeight ), styl );
 
 			budskrypt.KtoryBudynek = i;
 		}

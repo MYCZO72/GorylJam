@@ -119,6 +119,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114924716529586598, guid: 547e46defc186ff41b2ca985e15cba47,
+        type: 2}
+      propertyPath: sufity.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4404824543486260, guid: 547e46defc186ff41b2ca985e15cba47, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.9624507
@@ -151,6 +156,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114924716529586598, guid: 547e46defc186ff41b2ca985e15cba47,
+        type: 2}
+      propertyPath: sufity.Array.data[0]
+      value: 
+      objectReference: {fileID: 1049424108545042, guid: 5d35605a085e8854d8d038030faa16b9,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 547e46defc186ff41b2ca985e15cba47, type: 2}
   m_IsPrefabParent: 0
@@ -345,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f5c7785678efb4a8ff4f0d87b3fc6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoom: 256
+  zoom: 128
 --- !u!114 &491429251 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114285874951366932, guid: 1e05dc03045dd214194091c7a5b12f11,
@@ -380,6 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BuildingCount: 8
+  styl: 0
   budynek: {fileID: 1344805868083364, guid: 547e46defc186ff41b2ca985e15cba47, type: 2}
   space: 10
   MinimalHeight: 3
@@ -752,7 +764,7 @@ Prefab:
     - target: {fileID: 114285874951366932, guid: 1e05dc03045dd214194091c7a5b12f11,
         type: 2}
       propertyPath: speed
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114366620252309580, guid: 1e05dc03045dd214194091c7a5b12f11,
         type: 2}
