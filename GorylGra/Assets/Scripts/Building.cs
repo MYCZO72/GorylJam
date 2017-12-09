@@ -10,6 +10,7 @@ public class Building : MonoBehaviour
 
 	private Transform buildingHolder = null;
 	public GameObject[] floors;
+	public GameObject[] parter;
 
 	private List<GameObject> pietra = new List<GameObject>();
 
@@ -19,7 +20,10 @@ public class Building : MonoBehaviour
 		if( buildingHolder == null )
 			buildingHolder = new GameObject("Building").transform;
 
-		for(int i = 1; i <= height; i++)
+		GameObject parterInstance = Instantiate( parter[ Random.Range( 0, parter.Length - 1 ) ], new Vector3( this.transform.position.x, 3f, 0f ), Quaternion.identity, buildingHolder );
+		pietra.Add( parterInstance );
+
+		for(int i = 2; i <= height; i++)
 		{
 			GameObject nowy = floors[ Random.Range( 0, floors.Length - 1 ) ];
 
