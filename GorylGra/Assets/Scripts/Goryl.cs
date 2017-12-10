@@ -24,6 +24,7 @@ public class Goryl : MonoBehaviour {
 	private int score = 0;
 	private bool czySkacze = false;
 	private bool czySpada = false;
+	public bool czyKoniecSlowa = false;
 	public float plusfloat = 0.1f;
 	public bool isDeadProp {  get; private set; }
 	public AudioSource wybuch;
@@ -108,6 +109,8 @@ public class Goryl : MonoBehaviour {
 
 	void rozpierdol()
 	{
+		czyKoniecSlowa = true;
+
 		trzebarozpierdolic = false;
 		wybuch.Play();
 		Debug.Log( "rozpierdalanie ");
@@ -143,6 +146,7 @@ public class Goryl : MonoBehaviour {
 		}
 		else
 		{
+			czyKoniecSlowa = false;
 			gameManager.verbsBank.actualCharNumber = 0;
 			gameManager.verbsBank.newWord();
 			StartCoroutine(afterDestroyProcedure());
