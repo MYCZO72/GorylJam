@@ -21,6 +21,7 @@ public class Goryl : MonoBehaviour {
 	private int curH;
     private int score = 0;
     private bool czySkacze = false;
+	private bool czySpada = false;
 	public float plusfloat = 0.1f;
     public bool isDeadProp {  get; private set; }
 
@@ -43,6 +44,7 @@ public class Goryl : MonoBehaviour {
 		{
 			float xD = this.transform.position.x + plusfloat;
 			float yD = fun( xD );
+			yD += 1.25f;
 			yD = - yD * 0.5f;
 
 			this.transform.position = new Vector3( xD, yD, 0f );
@@ -53,7 +55,7 @@ public class Goryl : MonoBehaviour {
 	private void Jump( Vector3 destination )
 	{
 		float X = this.transform.position.x;
-		float H = curH * 3 - 0.625f;
+		float H = curH * 3;
 		H = -H;
 		a = 1f;
 		b = ( H*2 - 2 * X * space - space * space ) / space;
@@ -79,12 +81,26 @@ public class Goryl : MonoBehaviour {
 		}
 	}
 
+	IEnumerator JumpStraight(Vector3 destination){
+		czySkacze = true;
+		czySpada = true;
+		while(this.transform.position.y >= destination.y + plusfloat*2){
+			this.transform.Translate(0f, -plusfloat*2, 0f);
+			yield return null;
+		}
+		this.transform.Translate(0f, -this.transform.position.y + destination.y, 0f);
+		czySkacze = false;
+		czySpada = false;
+	}
+		
+
 	void rozpierdol()
 	{
 		GameObject ToDestroy = currentBuilding.pietra[ currentBuilding.pietra.Count - 1 ];
 		currentBuilding.pietra.RemoveAt( currentBuilding.pietra.Count - 1 );
-
-		this.transform.Translate( 0f, -3f, 0f );
+		Vector3 CEL = new Vector3 (this.transform.position.x, this.transform.position.y - 3f, this.transform.position.z); 
+		StartCoroutine(JumpStraight (CEL) );
+		//this.transform.Translate( 0f, -3f, 0f );
 		curH --;
 		Destroy( ToDestroy );
 	}
@@ -146,7 +162,7 @@ public class Goryl : MonoBehaviour {
 		kamerka.transform.position = rak;
 
 		CheckInput();
-		skonczonybudynek();
+		if(!czySpada) skonczonybudynek();
 
 		pierwszyraz = false;
 	}
