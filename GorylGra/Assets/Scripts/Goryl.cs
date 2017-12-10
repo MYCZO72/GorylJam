@@ -29,9 +29,10 @@ public class Goryl : MonoBehaviour {
 	public bool czyKoniecSlowa = false;
 	public float plusfloat = 0.1f;
 	public bool isDeadProp {  get; private set; }
-	public AudioSource wybuch;
-	public AudioSource klik;
-	public AudioSource skok;
+	public AudioClip wybuch;
+	public AudioClip klik;
+	public AudioClip skok;
+	public AudioClip zle;
 	public float kara = 1f;
 
 	private IEnumerator afterDestroyProcedure()
@@ -95,7 +96,8 @@ public class Goryl : MonoBehaviour {
 			ktorybudynek ++;
 			curH = currentBuilding.height;
 
-			skok.Play();
+			GetComponent<AudioSource>().clip=skok;
+			GetComponent<AudioSource>().Play();
 			Jump( teraz );
 		}
 	}
@@ -117,7 +119,8 @@ public class Goryl : MonoBehaviour {
 		czyKoniecSlowa = true;
 
 		trzebarozpierdolic = false;
-		wybuch.Play();
+		GetComponent<AudioSource>().clip=wybuch;
+		GetComponent<AudioSource>().Play();
 		Debug.Log( "rozpierdalanie ");
 		GameObject ToDestroy = currentBuilding.pietra[ currentBuilding.pietra.Count - 1 ];
 		currentBuilding.pietra.RemoveAt( currentBuilding.pietra.Count - 1 );
@@ -168,7 +171,8 @@ public class Goryl : MonoBehaviour {
 			textureRenderer.sprite = textureList[Random.Range(0, textureList.Count - 1)];
 			gameManager.verbsBank.actualCharNumber++;
 
-			klik.Play();
+			GetComponent<AudioSource>().clip=klik;
+			GetComponent<AudioSource>().Play();
 			animator.SetBool( "klikniete", true );
 			//animator.SetBool( "klikniete", false );
 			ktoreuderzenie ++;
@@ -180,6 +184,8 @@ public class Goryl : MonoBehaviour {
 			{
 				gameManager.canvas.GetComponent<ImageManager>().SetImageONIrcorrect();
 				timer.transform.localScale = new Vector3(timer.transform.localScale.x-kara,timer.transform.localScale.y,timer.transform.localScale.z);
+				GetComponent<AudioSource>().clip=zle;
+				GetComponent<AudioSource>().Play();
 			}
 				// zle wpisane
 		}
