@@ -58,12 +58,18 @@ MonoBehaviour:
   - {fileID: 1625070858737748, guid: d3018f7056e514f4aafedc381965029e, type: 2}
   - {fileID: 1275990554035876, guid: c10a220d5d0e6e54e9a2aa717cbe9c95, type: 2}
   - {fileID: 1829848487970274, guid: 8557e06665b3e9b4eaf66d0a81a75ff8, type: 2}
+  - {fileID: 1357136116966936, guid: 4b5176e872b6b58458c766801e21e0d4, type: 2}
+  - {fileID: 1213784881663514, guid: 2458134d12fd79743b23f3b466a1a225, type: 2}
   parter:
   - {fileID: 1294010695180154, guid: 2de4cf9e7c1a6264ab3f006fd1de3e57, type: 2}
   - {fileID: 1700985582403424, guid: bdc5f9b09bbaf9148bfb2a03bc7e8589, type: 2}
   - {fileID: 1234645303263208, guid: 89659a54fb2cfad47b918e4b98720c5a, type: 2}
+  - {fileID: 1589857843437908, guid: 1b06b485d42f4a44f80eac2e3843b597, type: 2}
+  - {fileID: 1758373470047140, guid: b000832f27193454b9aa9dabf99241cd, type: 2}
   sufity:
   - {fileID: 1562398832013552, guid: f8349e361c9bdf14e94d26fa1b9d43d1, type: 2}
   - {fileID: 1744574754965354, guid: fb2b78b9b3a57b74a9e94584804fd7d7, type: 2}
   - {fileID: 1998844240512918, guid: b6edd2a8cccc1484bac7888b7bf95933, type: 2}
+  - {fileID: 1413618840976572, guid: 2e3164f35d4ab134c9536c921f03973b, type: 2}
+  - {fileID: 1602724088108916, guid: f5c24cde28eebc34cafc24da3dede91b, type: 2}
   pietra: []

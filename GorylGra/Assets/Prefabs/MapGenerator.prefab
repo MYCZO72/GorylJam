@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04ace8ca6346f34c82b717d2e8f797e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingCount: 30
+  BuildingCount: 50
   styl: 0
   budynek: {fileID: 1344805868083364, guid: 547e46defc186ff41b2ca985e15cba47, type: 2}
   space: 10
