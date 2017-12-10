@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour {
     public Goryl gorylPlayer;
     public Canvas canvas;
     public Text actualButtonWrite;
-
 	void LateUpdate () {
         if (gorylPlayer.isDeadProp)
         {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Goryl : MonoBehaviour {
 
@@ -31,6 +32,7 @@ public class Goryl : MonoBehaviour {
 	public AudioSource wybuch;
 	public AudioSource klik;
 	public AudioSource skok;
+	public float kara = 1f;
 
 	private IEnumerator afterDestroyProcedure()
 	{
@@ -93,12 +95,8 @@ public class Goryl : MonoBehaviour {
 			ktorybudynek ++;
 			curH = currentBuilding.height;
 
-			timer.ukryj();
-
 			skok.Play();
 			Jump( teraz );
-
-			timer.napelnij();
 		}
 	}
 
@@ -128,7 +126,6 @@ public class Goryl : MonoBehaviour {
 		//this.transform.Translate( 0f, -3f, 0f );
 		curH --;
 		Destroy( ToDestroy );
-		timer.napelnij();
 	}
 
 	void Ustawfalse()
@@ -158,12 +155,16 @@ public class Goryl : MonoBehaviour {
 			gameManager.verbsBank.actualCharNumber = 0;
 			gameManager.verbsBank.newWord();
 			StartCoroutine(afterDestroyProcedure());
+			gameManager.canvas.GetComponent<ImageManager>().LoadNewWord(gameManager.verbsBank.ActualVerb);
 			trzebarozpierdolic = true;
+			//koniec slowa
+			timer.napelnij();
 		}
 
 		if(!czySkacze)
 		if (Input.GetKeyDown((KeyCode)actualchar))
 		{
+			gameManager.canvas.GetComponent<ImageManager>().SetImageONCorrect();
 			textureRenderer.sprite = textureList[Random.Range(0, textureList.Count - 1)];
 			gameManager.verbsBank.actualCharNumber++;
 
@@ -171,10 +172,16 @@ public class Goryl : MonoBehaviour {
 			animator.SetBool( "klikniete", true );
 			//animator.SetBool( "klikniete", false );
 			ktoreuderzenie ++;
+			//dobrze wpisane slowo
 		}
 		else
 		{
-			//przegrywanie
+			if(Input.anyKeyDown)
+			{
+				gameManager.canvas.GetComponent<ImageManager>().SetImageONIrcorrect();
+				timer.transform.localScale = new Vector3(timer.transform.localScale.x-kara,timer.transform.localScale.y,timer.transform.localScale.z);
+			}
+				// zle wpisane
 		}
 	}
 
@@ -187,6 +194,7 @@ public class Goryl : MonoBehaviour {
 		textureRenderer = GetComponent<SpriteRenderer>();
 		textureRenderer.sprite = textureList[0];
 		space = mapGenerator.space;
+		gameManager.canvas.GetComponent<ImageManager>().LoadNewWord(gameManager.verbsBank.ActualVerb);
 
 		Debug.Log( "to jest przed poczatkowym przesunieciem " + this.transform.position.x );
 		this.transform.Translate( -space, 0f, 0f );
