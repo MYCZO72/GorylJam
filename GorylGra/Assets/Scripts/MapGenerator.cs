@@ -12,6 +12,8 @@ public class MapGenerator : MonoBehaviour {
 	public int MinimalHeight;
 	public int MaximalHeight;
 
+	public int[] ilestylu;
+
 	private Transform boardHolder = null;
 
 	public List<GameObject> BuildingList = new List<GameObject>();
@@ -20,18 +22,22 @@ public class MapGenerator : MonoBehaviour {
 	{
 		if( boardHolder == null )
 			boardHolder = new GameObject("Plansza").transform;
-		
+
+		int terazstyl = 0, ile = 0;
 		for(int i = 0; i < BuildingCount; i++)
 		{
 			GameObject nowybudynek = Instantiate( budynek, new Vector3( i * space, 0f, 0f ), Quaternion.identity, boardHolder );
 
 			Building budskrypt = nowybudynek.GetComponent<Building>();
 
-			styl = i / 10;
-			if( styl > 4 )
-				styl = 4;
+			if( ile == ilestylu[terazstyl] )
+			{
+				ile = 0;
+				terazstyl ++;
+			}
+			ile ++;
 
-			budskrypt.Create( Random.Range( MinimalHeight, MaximalHeight ), styl );
+			budskrypt.Create( Random.Range( MinimalHeight, MaximalHeight ), terazstyl );
 
 			budskrypt.KtoryBudynek = i;
 

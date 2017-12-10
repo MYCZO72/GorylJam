@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actualCharNumber: 0
+  level: 1
 --- !u!114 &114286787926388820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,7 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   verbsBank: {fileID: 114151904918982028}
-  gorylPlayer: {fileID: 114285874951366932, guid: 1e05dc03045dd214194091c7a5b12f11,
-    type: 2}
-  canvas: {fileID: 223886006652255768, guid: 22266e03c463a9d4195441a143d5c10d, type: 2}
+  gorylPlayer: {fileID: 0}
+  canvas: {fileID: 0}
   actualButtonWrite: {fileID: 0}

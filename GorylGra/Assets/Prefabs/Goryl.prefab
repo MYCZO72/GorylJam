@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114285874951366932}
   - component: {fileID: 114366620252309580}
   - component: {fileID: 54318008503071194}
+  - component: {fileID: 95943668948915754}
   m_Layer: 0
   m_Name: Goryl
   m_TagString: Untagged
@@ -58,6 +59,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &95943668948915754
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1473397784695162}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e46f3d175e462864d99d107c3a5824b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114285874951366932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,15 +89,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textureList:
   - {fileID: 21300000, guid: 948509b8bc08d824e940b71389a6c2af, type: 3}
-  kamerka: {fileID: 1631379721225790, guid: 2852d174d2c3e47408e25397fb6fec49, type: 2}
-  gameManager: {fileID: 114286787926388820, guid: 0ed770c5ad9891e43b028d8bc6f9db7e,
-    type: 2}
-  mapGenerator: {fileID: 114223766500656050, guid: 0bbc50a1eee75924384f7d4fa7e7de2e,
-    type: 2}
+  kamerka: {fileID: 0}
+  gameManager: {fileID: 0}
+  mapGenerator: {fileID: 0}
   space: 10
   speed: 0.2
   ktorybudynek: 0
   plusfloat: 0.1
+  wybuch: {fileID: 82633273210173526, guid: 0d0df91075ad8a94f9171ff668a3e965, type: 2}
+  klik: {fileID: 82573301713475264, guid: 9ba6a2836610ade4f9958a59c534dfcb, type: 2}
+  skok: {fileID: 82890561259165530, guid: c14d9f0a406f3e644a849e4c52750598, type: 2}
 --- !u!114 &114366620252309580
 MonoBehaviour:
   m_ObjectHideFlags: 1

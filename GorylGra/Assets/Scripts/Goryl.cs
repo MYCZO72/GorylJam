@@ -6,6 +6,7 @@ public class Goryl : MonoBehaviour {
 
 	private Collider gorylColider;
 	private Rigidbody gorylRigid;
+	private Animator animator;
 
 	public List<Sprite> textureList = new List<Sprite>();
 	private SpriteRenderer textureRenderer;
@@ -16,6 +17,7 @@ public class Goryl : MonoBehaviour {
 	private Building currentBuilding;
 
 	public int space;
+	private int ktoreuderzenie;
 	public float speed;
 	public int ktorybudynek = 0;
 	private int curH;
@@ -24,6 +26,9 @@ public class Goryl : MonoBehaviour {
 	private bool czySpada = false;
 	public float plusfloat = 0.1f;
 	public bool isDeadProp {  get; private set; }
+	public AudioSource wybuch;
+	public AudioSource klik;
+	public AudioSource skok;
 
 	private IEnumerator afterDestroyProcedure()
 	{
@@ -74,7 +79,6 @@ public class Goryl : MonoBehaviour {
 		{
 			Vector3 teraz = new Vector3( transform.position.x + space, 0f, 0f );
 
-
 			score++;  
 			gameManager.verbsBank.level = score / 10 + 1;  //co 10 wzieksza sie poziom :)
 			Building newBuilding = currentBuilding.nextBuilding;
@@ -82,6 +86,8 @@ public class Goryl : MonoBehaviour {
 			currentBuilding = newBuilding;
 			ktorybudynek ++;
 			curH = currentBuilding.height;
+
+			skok.Play();
 			Jump( teraz );
 		}
 	}
@@ -98,9 +104,10 @@ public class Goryl : MonoBehaviour {
 		czySpada = false;
 	}
 
-
 	void rozpierdol()
 	{
+		trzebarozpierdolic = false;
+		wybuch.Play();
 		Debug.Log( "rozpierdalanie ");
 		GameObject ToDestroy = currentBuilding.pietra[ currentBuilding.pietra.Count - 1 ];
 		currentBuilding.pietra.RemoveAt( currentBuilding.pietra.Count - 1 );
@@ -109,6 +116,20 @@ public class Goryl : MonoBehaviour {
 		//this.transform.Translate( 0f, -3f, 0f );
 		curH --;
 		Destroy( ToDestroy );
+	}
+
+	void Ustawfalse()
+	{
+		animator.SetBool( "czylewo", false );
+		animator.SetBool( "czyprawo", false );
+		animator.SetBool( "klikniete", false );
+	}
+
+	bool trzebarozpierdolic;
+	void probojrozpierdolic()
+	{
+		if( trzebarozpierdolic )
+			rozpierdol();
 	}
 
 	void CheckInput()
@@ -123,7 +144,7 @@ public class Goryl : MonoBehaviour {
 			gameManager.verbsBank.actualCharNumber = 0;
 			gameManager.verbsBank.newWord();
 			StartCoroutine(afterDestroyProcedure());
-			rozpierdol();
+			trzebarozpierdolic = true;
 		}
 
 		if(!czySkacze)
@@ -131,12 +152,18 @@ public class Goryl : MonoBehaviour {
 		{
 			textureRenderer.sprite = textureList[Random.Range(0, textureList.Count - 1)];
 			gameManager.verbsBank.actualCharNumber++;
+
+			klik.Play();
+			animator.SetBool( "klikniete", true );
+			//animator.SetBool( "klikniete", false );
+			ktoreuderzenie ++;
 		}
 	}
 
 	IEnumerator startowy()
 	{
 		yield return new WaitForEndOfFrame();
+		animator = GetComponent<Animator>();
 		gorylColider = GetComponent<Collider>();
 		gorylRigid = GetComponent<Rigidbody>();
 		textureRenderer = GetComponent<SpriteRenderer>();
@@ -165,11 +192,29 @@ public class Goryl : MonoBehaviour {
 		if( pierwszyraz ) yield return new WaitForEndOfFrame();
 		Vector3 rak = this.transform.position;
 		rak.z = rak.z - 1;
+		rak.y -= 1.1f;
 		kamerka.transform.position = rak;
 
 		CheckInput();
 		if(!czySpada) 
 			skonczonybudynek();
+
+		if( czySkacze )
+			Ustawfalse();
+
+		if( !czySkacze )
+		{
+			if( ktoreuderzenie % 2 == 0 )
+			{
+				animator.SetBool( "czylewa", true );
+				animator.SetBool( "czyprawa", false );
+			}
+			else
+			{
+				animator.SetBool( "czyprawa", true );
+				animator.SetBool( "czylewa", false );
+			}
+		}
 
 		pierwszyraz = false;
 	}

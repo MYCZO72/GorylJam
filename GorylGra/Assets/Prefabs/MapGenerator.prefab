@@ -53,8 +53,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuildingCount: 100
   styl: 0
-  budynek: {fileID: 1344805868083364, guid: 547e46defc186ff41b2ca985e15cba47, type: 2}
+  budynek: {fileID: 0}
   space: 10
   MinimalHeight: 3
   MaximalHeight: 7
+  ilestylu: 03000000050000000a0000000a000000e803000000000000
   BuildingList: []

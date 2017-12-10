@@ -214,6 +214,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114361300213329288, guid: 2852d174d2c3e47408e25397fb6fec49,
+        type: 2}
+      propertyPath: zoom
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2852d174d2c3e47408e25397fb6fec49, type: 2}
   m_IsPrefabParent: 0
@@ -316,9 +321,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114286787926388820, guid: 0ed770c5ad9891e43b028d8bc6f9db7e,
         type: 2}
-      propertyPath: actualButtonWrite
+      propertyPath: gorylPlayer
       value: 
-      objectReference: {fileID: 1373047044}
+      objectReference: {fileID: 331272257}
     - target: {fileID: 114286787926388820, guid: 0ed770c5ad9891e43b028d8bc6f9db7e,
         type: 2}
       propertyPath: canvas
@@ -326,9 +331,9 @@ Prefab:
       objectReference: {fileID: 1373047045}
     - target: {fileID: 114286787926388820, guid: 0ed770c5ad9891e43b028d8bc6f9db7e,
         type: 2}
-      propertyPath: gorylPlayer
+      propertyPath: actualButtonWrite
       value: 
-      objectReference: {fileID: 331272257}
+      objectReference: {fileID: 1373047044}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ed770c5ad9891e43b028d8bc6f9db7e, type: 2}
   m_IsPrefabParent: 0
@@ -348,7 +353,7 @@ Prefab:
     - target: {fileID: 224055457924536468, guid: 22266e03c463a9d4195441a143d5c10d,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 334.5
+      value: 381
       objectReference: {fileID: 0}
     - target: {fileID: 224055457924536468, guid: 22266e03c463a9d4195441a143d5c10d,
         type: 2}
@@ -434,21 +439,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224055457924536468, guid: 22266e03c463a9d4195441a143d5c10d,
-        type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.016638935
-      objectReference: {fileID: 0}
-    - target: {fileID: 224055457924536468, guid: 22266e03c463a9d4195441a143d5c10d,
-        type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.016638935
-      objectReference: {fileID: 0}
-    - target: {fileID: 224055457924536468, guid: 22266e03c463a9d4195441a143d5c10d,
-        type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.016638935
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22266e03c463a9d4195441a143d5c10d, type: 2}
