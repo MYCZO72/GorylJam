@@ -23,7 +23,7 @@ public class Goryl : MonoBehaviour {
 	public float speed;
 	public int ktorybudynek = 0;
 	private int curH;
-	private int score = 0;
+	public int score = 0;
 	private bool czySkacze = false;
 	private bool czySpada = false;
 	public bool czyKoniecSlowa = false;
@@ -86,7 +86,7 @@ public class Goryl : MonoBehaviour {
 		{
 			Vector3 teraz = new Vector3( transform.position.x + space, 0f, 0f );
 
-			score++;  
+			
 			Building newBuilding = currentBuilding.nextBuilding;
 
 			gameManager.verbsBank.level = newBuilding.styl + 1;  //co 10 wzieksza sie poziom :)
@@ -117,15 +117,16 @@ public class Goryl : MonoBehaviour {
 	void rozpierdol()
 	{
 		czyKoniecSlowa = true;
-
-		trzebarozpierdolic = false;
+        score++;
+        trzebarozpierdolic = false;
 		GetComponent<AudioSource>().clip=wybuch;
 		GetComponent<AudioSource>().Play();
 		Debug.Log( "rozpierdalanie ");
 		GameObject ToDestroy = currentBuilding.pietra[ currentBuilding.pietra.Count - 1 ];
 		currentBuilding.pietra.RemoveAt( currentBuilding.pietra.Count - 1 );
-		Vector3 CEL = new Vector3 (this.transform.position.x, this.transform.position.y - 3f, this.transform.position.z); 
-		StartCoroutine(JumpStraight (CEL) );
+		Vector3 CEL = new Vector3 (this.transform.position.x, this.transform.position.y - 3f, this.transform.position.z);
+        gameManager.canvas.GetComponent<ImageManager>().LoadNewWord(gameManager.verbsBank.ActualVerb);
+        StartCoroutine(JumpStraight (CEL) );
 		//this.transform.Translate( 0f, -3f, 0f );
 		curH --;
 		Destroy( ToDestroy );
@@ -158,7 +159,7 @@ public class Goryl : MonoBehaviour {
 			gameManager.verbsBank.actualCharNumber = 0;
 			gameManager.verbsBank.newWord();
 			StartCoroutine(afterDestroyProcedure());
-			gameManager.canvas.GetComponent<ImageManager>().LoadNewWord(gameManager.verbsBank.ActualVerb);
+			
 			trzebarozpierdolic = true;
 			//koniec slowa
 			timer.napelnij();

@@ -32,7 +32,7 @@ public class ImageManager : MonoBehaviour {
                 frameIterator++;
             }
 
-            if (frameIterator % word.Length == 0)
+            if(word.Length != 0) if ( frameIterator % word.Length == 0)
             {
                 if (actualFrame == 1)
                 {

@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Menu.unity
+    guid: ebb2507b730bc7c40950541dfa55ce42
+  - enabled: 1
+    path: Assets/GorylMain.unity
+    guid: 43bd6b9f03bebb243a020b0ef969b257
+  - enabled: 1
+    path: Assets/GameOver.unity
+    guid: 8b8bfc5394dfab641a38f6ade0bd85ad

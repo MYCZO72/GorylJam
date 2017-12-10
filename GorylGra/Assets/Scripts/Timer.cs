@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour {
 	public float timespeed = 0.000001f;
 	public bool pelny;
 	public bool ukryty;
+    public Goryl gorryl; 
 
 	public GameObject kamerka;
 
@@ -22,10 +23,11 @@ public class Timer : MonoBehaviour {
 	public void ukryj()
 	{
 		Debug.Log( "ukrywam" );
-		ukryty = true;
-		this.transform.localScale = new Vector3( 0f, 0f, 0f );
+		//ukryty = true;
+		//this.transform.localScale = new Vector3( 0f, 0f, 0f );
 		//GetComponent<SpriteRenderer>().enabled = false;
 		//xd.enabled = !xd.enabled;
+
 	}
 
 	void Update () {
@@ -37,8 +39,10 @@ public class Timer : MonoBehaviour {
 		}
 		else
 		{
-			
-			Debug.Log( "przegrales" );
+            PlayerPrefs.SetInt("Score", gorryl.score);
+            if (gorryl.score > PlayerPrefs.GetInt("HighScore"))
+                PlayerPrefs.SetInt("HighScore", gorryl.score);
+            SceneManager.LoadScene(2);
 		}
 			
 	}
