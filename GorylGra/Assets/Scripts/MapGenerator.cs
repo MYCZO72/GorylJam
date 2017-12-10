@@ -28,6 +28,8 @@ public class MapGenerator : MonoBehaviour {
 			Building budskrypt = nowybudynek.GetComponent<Building>();
 
 			styl = i / 10;
+			if( styl > 4 )
+				styl = 4;
 
 			budskrypt.Create( Random.Range( MinimalHeight, MaximalHeight ), styl );
 

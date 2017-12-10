@@ -43,9 +43,14 @@ public class Goryl : MonoBehaviour {
 		while( this.transform.position.x < destination.x )
 		{
 			float xD = this.transform.position.x + plusfloat;
+			if( xD > destination.x )
+				xD = destination.x;
 			float yD = fun( xD );
 			yD += 1.25f;
 			yD = - yD * 0.5f;
+
+			if( yD < 0 )
+				yD = 0;
 
 			this.transform.position = new Vector3( xD, yD, 0f );
 			yield return null;
