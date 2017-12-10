@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Goryl : MonoBehaviour {
 
-    private Collider gorylColider;
-    private Rigidbody gorylRigid;
+	private Collider gorylColider;
+	private Rigidbody gorylRigid;
 
-    public List<Sprite> textureList = new List<Sprite>();
-    private SpriteRenderer textureRenderer;
+	public List<Sprite> textureList = new List<Sprite>();
+	private SpriteRenderer textureRenderer;
 
 	public GameObject kamerka;
-    public GameManager gameManager;
+	public GameManager gameManager;
 	public MapGenerator mapGenerator;
 	private Building currentBuilding;
 
@@ -19,17 +19,17 @@ public class Goryl : MonoBehaviour {
 	public float speed;
 	public int ktorybudynek = 0;
 	private int curH;
-    private int score = 0;
-    private bool czySkacze = false;
+	private int score = 0;
+	private bool czySkacze = false;
 	private bool czySpada = false;
 	public float plusfloat = 0.1f;
-    public bool isDeadProp {  get; private set; }
+	public bool isDeadProp {  get; private set; }
 
-    private IEnumerator afterDestroyProcedure()
-    {
-        yield return new WaitForSeconds(2.0f);
-    }
-    
+	private IEnumerator afterDestroyProcedure()
+	{
+		yield return new WaitForSeconds(2.0f);
+	}
+
 	private float a, b, c;
 
 	private float fun( float x )
@@ -39,7 +39,7 @@ public class Goryl : MonoBehaviour {
 
 	IEnumerator JumpProcedure( Vector3 destination )
 	{
-        czySkacze = true;
+		czySkacze = true;
 		while( this.transform.position.x < destination.x )
 		{
 			float xD = this.transform.position.x + plusfloat;
@@ -50,7 +50,7 @@ public class Goryl : MonoBehaviour {
 			this.transform.position = new Vector3( xD, yD, 0f );
 			yield return null;
 		}
-        czySkacze = false;
+		czySkacze = false;
 	}
 	private void Jump( Vector3 destination )
 	{
@@ -70,9 +70,9 @@ public class Goryl : MonoBehaviour {
 			Vector3 teraz = new Vector3( transform.position.x + space, 0f, 0f );
 
 
-            score++;  
-            gameManager.verbsBank.level = score / 10 + 1;  //co 10 wzieksza sie poziom :)
-            Building newBuilding = currentBuilding.nextBuilding;
+			score++;  
+			gameManager.verbsBank.level = score / 10 + 1;  //co 10 wzieksza sie poziom :)
+			Building newBuilding = currentBuilding.nextBuilding;
 			Destroy( currentBuilding );
 			currentBuilding = newBuilding;
 			ktorybudynek ++;
@@ -92,10 +92,11 @@ public class Goryl : MonoBehaviour {
 		czySkacze = false;
 		czySpada = false;
 	}
-		
+
 
 	void rozpierdol()
 	{
+		Debug.Log( "rozpierdalanie ");
 		GameObject ToDestroy = currentBuilding.pietra[ currentBuilding.pietra.Count - 1 ];
 		currentBuilding.pietra.RemoveAt( currentBuilding.pietra.Count - 1 );
 		Vector3 CEL = new Vector3 (this.transform.position.x, this.transform.position.y - 3f, this.transform.position.z); 
@@ -121,7 +122,7 @@ public class Goryl : MonoBehaviour {
 		}
 
 		if(!czySkacze)
-        if (Input.GetKeyDown((KeyCode)actualchar))
+		if (Input.GetKeyDown((KeyCode)actualchar))
 		{
 			textureRenderer.sprite = textureList[Random.Range(0, textureList.Count - 1)];
 			gameManager.verbsBank.actualCharNumber++;
@@ -137,16 +138,16 @@ public class Goryl : MonoBehaviour {
 		textureRenderer.sprite = textureList[0];
 		space = mapGenerator.space;
 
+		Debug.Log( "to jest przed poczatkowym przesunieciem " + this.transform.position.x );
 		this.transform.Translate( -space, 0f, 0f );
-
+		Debug.Log( "to jest po przesunieciu " + this.transform.position.x );
 
 		Building pierwszy = mapGenerator.BuildingList[0].GetComponent<Building>();
 		currentBuilding = pierwszy;
 		curH = pierwszy.height;
-
+		Debug.Log( "pierwsza wysokosc " + curH );
 		Jump( pierwszy.transform.position );
 	}
-
 
 	void Start () {
 		StartCoroutine( startowy() );
@@ -162,12 +163,13 @@ public class Goryl : MonoBehaviour {
 		kamerka.transform.position = rak;
 
 		CheckInput();
-		if(!czySpada) skonczonybudynek();
+		if(!czySpada) 
+			skonczonybudynek();
 
 		pierwszyraz = false;
 	}
 
-    void Update () {
+	void Update () {
 		StartCoroutine( updatowanie() );
 
 		/*float movex = Input.GetAxis("Horizontal");
