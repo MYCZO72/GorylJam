@@ -80,8 +80,10 @@ public class Goryl : MonoBehaviour {
 			Vector3 teraz = new Vector3( transform.position.x + space, 0f, 0f );
 
 			score++;  
-			gameManager.verbsBank.level = score / 10 + 1;  //co 10 wzieksza sie poziom :)
 			Building newBuilding = currentBuilding.nextBuilding;
+
+			gameManager.verbsBank.level = newBuilding.styl + 1;  //co 10 wzieksza sie poziom :)
+
 			Destroy( currentBuilding );
 			currentBuilding = newBuilding;
 			ktorybudynek ++;

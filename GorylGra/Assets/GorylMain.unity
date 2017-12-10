@@ -217,7 +217,22 @@ Prefab:
     - target: {fileID: 114361300213329288, guid: 2852d174d2c3e47408e25397fb6fec49,
         type: 2}
       propertyPath: zoom
-      value: 256
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 20184849233407892, guid: 2852d174d2c3e47408e25397fb6fec49,
+        type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20184849233407892, guid: 2852d174d2c3e47408e25397fb6fec49,
+        type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20184849233407892, guid: 2852d174d2c3e47408e25397fb6fec49,
+        type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2852d174d2c3e47408e25397fb6fec49, type: 2}
@@ -271,6 +286,11 @@ Prefab:
       propertyPath: budynek
       value: 
       objectReference: {fileID: 1679722085}
+    - target: {fileID: 114223766500656050, guid: 0bbc50a1eee75924384f7d4fa7e7de2e,
+        type: 2}
+      propertyPath: ilestylu.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0bbc50a1eee75924384f7d4fa7e7de2e, type: 2}
   m_IsPrefabParent: 0

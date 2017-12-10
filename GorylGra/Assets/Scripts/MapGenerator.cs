@@ -40,6 +40,7 @@ public class MapGenerator : MonoBehaviour {
 			budskrypt.Create( Random.Range( MinimalHeight, MaximalHeight ), terazstyl );
 
 			budskrypt.KtoryBudynek = i;
+			budskrypt.styl = terazstyl;
 
 			BuildingList.Add( nowybudynek );
 

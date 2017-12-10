@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 public class Building : MonoBehaviour
 {
 	public int height = 5;
+	public int styl;
 	public int KtoryBudynek;
 	public Building nextBuilding;
 
