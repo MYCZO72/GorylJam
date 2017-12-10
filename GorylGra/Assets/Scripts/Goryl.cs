@@ -14,6 +14,7 @@ public class Goryl : MonoBehaviour {
 	public GameObject kamerka;
 	public GameManager gameManager;
 	public MapGenerator mapGenerator;
+	public Timer timer;
 	private Building currentBuilding;
 
 	public int space;
@@ -65,6 +66,7 @@ public class Goryl : MonoBehaviour {
 	}
 	private void Jump( Vector3 destination )
 	{
+		timer.ukryj();
 		float X = this.transform.position.x;
 		float H = curH * 3;
 		H = -H;
@@ -72,6 +74,7 @@ public class Goryl : MonoBehaviour {
 		b = ( H*2 - 2 * X * space - space * space ) / space;
 		c = ( -X * X - b * X );
 		StartCoroutine( JumpProcedure( destination ) );
+		timer.napelnij();
 	}
 
 	void skonczonybudynek()
@@ -90,8 +93,12 @@ public class Goryl : MonoBehaviour {
 			ktorybudynek ++;
 			curH = currentBuilding.height;
 
+			timer.ukryj();
+
 			skok.Play();
 			Jump( teraz );
+
+			timer.napelnij();
 		}
 	}
 
@@ -121,6 +128,7 @@ public class Goryl : MonoBehaviour {
 		//this.transform.Translate( 0f, -3f, 0f );
 		curH --;
 		Destroy( ToDestroy );
+		timer.napelnij();
 	}
 
 	void Ustawfalse()
@@ -164,6 +172,10 @@ public class Goryl : MonoBehaviour {
 			//animator.SetBool( "klikniete", false );
 			ktoreuderzenie ++;
 		}
+		else
+		{
+			//przegrywanie
+		}
 	}
 
 	IEnumerator startowy()
@@ -184,6 +196,8 @@ public class Goryl : MonoBehaviour {
 		currentBuilding = pierwszy;
 		curH = pierwszy.height;
 		Debug.Log( "pierwsza wysokosc " + curH );
+
+		timer.ukryj();
 		Jump( pierwszy.transform.position );
 	}
 
