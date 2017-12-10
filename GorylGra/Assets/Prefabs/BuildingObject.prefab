@@ -53,9 +53,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   height: 5
   KtoryBudynek: 0
+  nextBuilding: {fileID: 0}
   floors:
   - {fileID: 1625070858737748, guid: d3018f7056e514f4aafedc381965029e, type: 2}
+  - {fileID: 1275990554035876, guid: c10a220d5d0e6e54e9a2aa717cbe9c95, type: 2}
+  - {fileID: 1829848487970274, guid: 8557e06665b3e9b4eaf66d0a81a75ff8, type: 2}
   parter:
   - {fileID: 1294010695180154, guid: 2de4cf9e7c1a6264ab3f006fd1de3e57, type: 2}
+  - {fileID: 1700985582403424, guid: bdc5f9b09bbaf9148bfb2a03bc7e8589, type: 2}
+  - {fileID: 1234645303263208, guid: 89659a54fb2cfad47b918e4b98720c5a, type: 2}
   sufity:
-  - {fileID: 1049424108545042, guid: 5d35605a085e8854d8d038030faa16b9, type: 2}
+  - {fileID: 1562398832013552, guid: f8349e361c9bdf14e94d26fa1b9d43d1, type: 2}
+  - {fileID: 1744574754965354, guid: fb2b78b9b3a57b74a9e94584804fd7d7, type: 2}
+  - {fileID: 1998844240512918, guid: b6edd2a8cccc1484bac7888b7bf95933, type: 2}
+  pietra: []
