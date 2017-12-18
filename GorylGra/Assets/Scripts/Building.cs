@@ -10,7 +10,7 @@ public class Building : MonoBehaviour
 	public int KtoryBudynek;
 	public Building nextBuilding;
 
-	private Transform buildingHolder = null;
+	private Transform buildingHolder;
 	public GameObject[] floors;
 	public GameObject[] parter;
 	public GameObject[] sufity;
@@ -29,12 +29,8 @@ public class Building : MonoBehaviour
 		for(int i = 1; i < height - 1; i++)
 		{
 			GameObject nowy = floors[ style ];
-
-			GameObject instance = Instantiate( nowy, new Vector3( this.transform.position.x, i * 3, 0f ), Quaternion.identity, buildingHolder );
-
-			//instance.transform.SetParent( buildingHolder );
-
-			pietra.Add( instance );
+            GameObject instance = Instantiate( nowy, new Vector3( this.transform.position.x, i * 3, 0f ), Quaternion.identity, buildingHolder );
+            pietra.Add( instance );
 		}
 
 		GameObject sufitInstance = Instantiate( sufity[ style ], new Vector3( this.transform.position.x, 3 * ( height - 1 ), 0f ), Quaternion.identity, buildingHolder );
@@ -45,7 +41,6 @@ public class Building : MonoBehaviour
 	{
 		GameObject top = pietra[ pietra.Count - 1 ];
 		pietra.RemoveAt( pietra.Count - 1 );
-
 		Destroy( top );
 		height --;
 	}
@@ -55,8 +50,4 @@ public class Building : MonoBehaviour
 		return pietra[ pietra.Count - 1 ].transform;
 	}
 
-	void Start()
-	{
-		//Create( 6 );
-	}
 }

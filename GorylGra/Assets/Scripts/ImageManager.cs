@@ -20,7 +20,6 @@ public class ImageManager : MonoBehaviour {
         yield return new WaitForEndOfFrame();
         while (spriteRenderer!=null)
         {
-            Debug.Log(wordClickState[wordValuesMap.IndexOf(indexOfSign)]);
             if (actualFrame == 1)
             {
                 spriteRenderer.GetComponent<Image>().sprite = SpriteList[indexOfSign * 4 + actualFrame];
@@ -84,7 +83,7 @@ public class ImageManager : MonoBehaviour {
 
     public void LoadNewWord(string word)
     { 
-		word = word;
+		this.word = word;
         foreach(char sign in word)
         {
             wordMap.Add(Instantiate(sprite, WordsListPanel.transform));

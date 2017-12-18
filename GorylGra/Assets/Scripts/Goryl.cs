@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Goryl : MonoBehaviour {
 
-	private Collider gorylColider;
-	private Rigidbody gorylRigid;
 	private Animator animator;
 
 	public List<Sprite> textureList = new List<Sprite>();
@@ -20,27 +18,31 @@ public class Goryl : MonoBehaviour {
 
 	public int space;
 	private int ktoreuderzenie;
-	public float speed;
 	public int ktorybudynek = 0;
 	private int curH;
 	public int score = 0;
-	private bool czySkacze = false;
+
+    public float speed;
+    private float a, b, c;
+    public float plusfloat = 0.1f;
+    public float kara = 1f;
+
+    private bool czySkacze = false;
 	private bool czySpada = false;
 	public bool czyKoniecSlowa = false;
-	public float plusfloat = 0.1f;
 	public bool isDeadProp {  get; private set; }
-	public AudioClip wybuch;
+    private bool trzebarozpierdolic;
+    private bool pierwszyraz = true;
+
+    public AudioClip wybuch;
 	public AudioClip klik;
 	public AudioClip skok;
 	public AudioClip zle;
-	public float kara = 1f;
 
 	private IEnumerator afterDestroyProcedure()
 	{
 		yield return new WaitForSeconds(2.0f);
 	}
-
-	private float a, b, c;
 
 	private float fun( float x )
 	{
@@ -69,7 +71,6 @@ public class Goryl : MonoBehaviour {
 	}
 	private void Jump( Vector3 destination )
 	{
-		timer.ukryj();
 		float X = this.transform.position.x;
 		float H = curH * 3;
 		H = -H;
@@ -121,25 +122,20 @@ public class Goryl : MonoBehaviour {
         trzebarozpierdolic = false;
 		GetComponent<AudioSource>().clip=wybuch;
 		GetComponent<AudioSource>().Play();
-		Debug.Log( "rozpierdalanie ");
 		GameObject ToDestroy = currentBuilding.pietra[ currentBuilding.pietra.Count - 1 ];
 		currentBuilding.pietra.RemoveAt( currentBuilding.pietra.Count - 1 );
 		Vector3 CEL = new Vector3 (this.transform.position.x, this.transform.position.y - 3f, this.transform.position.z);
         gameManager.canvas.GetComponent<ImageManager>().LoadNewWord(gameManager.verbsBank.ActualVerb);
         StartCoroutine(JumpStraight (CEL) );
-		//this.transform.Translate( 0f, -3f, 0f );
 		curH --;
 		Destroy( ToDestroy );
 	}
 
 	void Ustawfalse()
 	{
-		animator.SetBool( "czylewo", false );
-		animator.SetBool( "czyprawo", false );
 		animator.SetBool( "klikniete", false );
 	}
 
-	bool trzebarozpierdolic;
 	void probojrozpierdolic()
 	{
 		if( trzebarozpierdolic )
@@ -175,7 +171,6 @@ public class Goryl : MonoBehaviour {
 			GetComponent<AudioSource>().clip=klik;
 			GetComponent<AudioSource>().Play();
 			animator.SetBool( "klikniete", true );
-			//animator.SetBool( "klikniete", false );
 			ktoreuderzenie ++;
 			//dobrze wpisane slowo
 		}
@@ -196,23 +191,16 @@ public class Goryl : MonoBehaviour {
 	{
 		yield return new WaitForEndOfFrame();
 		animator = GetComponent<Animator>();
-		gorylColider = GetComponent<Collider>();
-		gorylRigid = GetComponent<Rigidbody>();
 		textureRenderer = GetComponent<SpriteRenderer>();
 		textureRenderer.sprite = textureList[0];
 		space = mapGenerator.space;
 		gameManager.canvas.GetComponent<ImageManager>().LoadNewWord(gameManager.verbsBank.ActualVerb);
 
-		Debug.Log( "to jest przed poczatkowym przesunieciem " + this.transform.position.x );
 		this.transform.Translate( -space, 0f, 0f );
-		Debug.Log( "to jest po przesunieciu " + this.transform.position.x );
 
 		Building pierwszy = mapGenerator.BuildingList[0].GetComponent<Building>();
 		currentBuilding = pierwszy;
 		curH = pierwszy.height;
-		Debug.Log( "pierwsza wysokosc " + curH );
-
-		timer.ukryj();
 		Jump( pierwszy.transform.position );
 	}
 
@@ -220,7 +208,6 @@ public class Goryl : MonoBehaviour {
 		StartCoroutine( startowy() );
 	}
 
-	private bool pierwszyraz = true;
 	IEnumerator updatowanie()
 	{
 		if( pierwszyraz ) yield return new WaitForEndOfFrame();
@@ -256,14 +243,5 @@ public class Goryl : MonoBehaviour {
 
 	void Update () {
 		StartCoroutine( updatowanie() );
-
-		/*float movex = Input.GetAxis("Horizontal");
-		float movey = Input.GetAxis("Vertical");
-
-		Vector3 ruch = new Vector3( movex, movey, 0f );
-		ruch *= speed * Time.deltaTime;
-		Vector3 newposition = this.transform.position;
-		newposition = ruch + newposition;
-		this.transform.position = newposition;*/
 	}
 }

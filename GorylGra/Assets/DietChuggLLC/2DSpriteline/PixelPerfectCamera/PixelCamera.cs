@@ -2,8 +2,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
-        
+#endif
 
 public class PixelCamera : MonoBehaviour 
 {
@@ -13,7 +14,7 @@ public class PixelCamera : MonoBehaviour
     float unitsPerPixel;
     int width;
     int height;
-
+#if UNITY_EDITOR
     [ContextMenu("Generate")]
     void Generate()
     {
@@ -22,7 +23,7 @@ public class PixelCamera : MonoBehaviour
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
     }
-
+#endif
     void OnEnable()
     {
         PixelSettings pixelSettings = (PixelSettings)Resources.Load("PixelSettings");

@@ -34,6 +34,5 @@ public class VerbsBank : MonoBehaviour {
         int a123 = s[Math.Max(1, level - 4) + 2], b123 = s[level + 3];
         int r = UnityEngine.Random.Range(a123, b123);
         ActualVerb = t[r];
-        Debug.Log(ActualVerb + "   " + a123 +"   " + b123 + "   " + level);
     }
 }
